@@ -62,13 +62,25 @@ Please evaluate your system on the following questions:
 Do the answers appear to be correct and useful?
 ##### ✅ Answer:
 
-They do...the mental heath coach instructions are generally ignored when the topic is unrelated. The responses are as expected
-stanard for these kinds of general questions, abeit delivered in a dialect as instructued,
-The creative story was appropriately set in the region consistant with the dialect, in a typical kind of industry there. 
-.But for a trickier math test I tried the classic # of 'r's in strawberry and predictably got that one wrong (GPT4-o-mini)
+They do...the role of mental heath coach in the developer instruction are generally ignored when the topic is unrelated. The responses are standard for these kinds of general questions, abeit delivered in a dialect. 
+The creative story was nice - appropriately set in the region and a workplace consistant with the the regional dialect.
 
-However attempts to write something in a professional formal didn't have have the desired effect
+![Screenshot](images/Screenshot20260119at19.43.33.png)
+
+The math question was answered correctly, But a trickier math test I tried the classic # of 'r's in strawberry was incorrectly answered (2 not 3 rs) (GPT4-o-mini)
+
+![Screenshot](images/Screenshot20260119at11.06.24.png)
+
+
+Attempts to write something in a professional formal tone didn't have have the desired effect
+
+![Screenshot](images/Screenshot20260119at11.09.30.png)
+
 even when I ask IGNORE ALL PREVIOUS INSTRUCTIONS - in fact it got worse.
+
+HOWEVER, if I add a susequently add a NEW instruction to "ignore questions unrelated to mental heath" then it complies and refuses to answer these general questions
+
+![Screenshot](images/Screenshot20260120at12.27.23.png)
 
 ---
 
@@ -97,7 +109,9 @@ Now test your assistant with personal questions it should be able to help with. 
 
 Are the vibes of this assistant's answers aligned with your vibes? Why or why not?
 ##### ✅ Answer:
-Yes, the style is as expected with the original instruction. 
+
+Yes, the style is as expected with the original instruction. Overriding the original instruction to change style/tone was not successful
+
 ---
 
 #### 🏗️ Activity #3: Personal Vibe Checking Evals (Requires Additional Capabilities)
@@ -117,8 +131,10 @@ Now test your assistant with questions that would require capabilities beyond ba
 
 What are some limitations of your application?
 ##### ✅ Answer:
+
 It has no access to live data or data personal to me. The first question above is interpreted as a hypothetical question rather than a specific trip, which is fair because the question is ambiguous. 
 The second question is more specific and gets the appropriate refusal. 
+
 ---
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
