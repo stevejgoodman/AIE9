@@ -17,4 +17,7 @@ dependencies = [
     "langchain-qdrant>=0.2.0",
     "python-dotenv>=1.0.1",
     "nest-asyncio>=1.6.0",
+    "langchain-openai>=1.1.7",
+    "tavily-python>=0.7.19",
+    "rich>=14.3.1",
 ]
