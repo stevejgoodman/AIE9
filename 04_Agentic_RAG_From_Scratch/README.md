@@ -9,25 +9,23 @@
 
 | Session Sheet | Recording     | Slides        | Repo         | Homework      | Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-|[Agentic RAG From Scratch](https://github.com/AI-Maker-Space/AIE9/blob/main/00_Docs/Session_Sheets/04_Agentic_RAG_From_Scratch.md) | Coming soon! | Coming soon! | You are here! | Coming soon! | Coming soon! |
+| [Vibe Check!](../00_Docs/Session_Sheets/04_Agentic_RAG_From_Scratch.md) |[Recording!](https://us02web.zoom.us/rec/share/HY0f8Ovri36rF9lRYPs-I1qckTkEftcuxg0zUXmLSI9_tCxJQxXYgPXejzMxYbuC.nJypOGHZUaPBaVZd) <br> passcode: `02y.=1pO`| [Session 4 Slides](https://www.canva.com/design/DAG-EIVcUxE/WH_2fNB39mBUmOb-zeB8WA/edit?utm_content=DAG-EIVcUxE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 4 Assignment: Agentic RAG](https://forms.gle/wJWWTyQXhveVLaKx8) | [Feedback 1/22](https://forms.gle/dTuPZjRVnUMQy5x76) |
 
 
 ### Outline:
 
 **BREAKOUT ROOM #1:**
 - Task 1: Dependencies & Ollama Setup
-- Task 2: Environment Variables & LangSmith Tracing
-- Task 3: LangGraph Core Concepts (StateGraph, Nodes, Edges)
-- Task 4: Building a ReAct Agent from Scratch
-- Task 5: Adding Tools to Your Agent
+- Task 2: LangGraph Core Concepts (StateGraph, Nodes, Edges)
+- Task 3: Building a ReAct Agent from Scratch
+- Task 4: Adding Tools to Your Agent
      - **Activity #1**: Implement a Custom Routing Function
 
 **BREAKOUT ROOM #2:**
-- Task 6: Loading & Chunking with LangChain
-- Task 7: Setting up Qdrant with Local Embeddings
-- Task 8: Creating a RAG Tool
-- Task 9: Building Agentic RAG from Scratch
-- Task 10: Comparing Traces in LangSmith
+- Task 5: Loading & Chunking with LangChain
+- Task 6: Setting up Qdrant with Local Embeddings
+- Task 7: Creating a RAG Tool
+- Task 8: Building Agentic RAG from Scratch
      - **Activity #2**: Extend the Agent with Memory
 
 ### Prerequisites:
@@ -77,8 +75,6 @@ Run the notebook!
      - Add parallel tool execution when multiple tools are called
      - Create a custom routing strategy (e.g., route based on query type)
 - Make a diagram of your custom agent architecture showing the graph structure
-- Run the notebook and observe traces in LangSmith
-- Compare your enhanced agent's traces to the baseline!
 - Record a Loom video walking through the notebook, the questions, and your enhancements!
 
 # Share
@@ -115,7 +111,6 @@ Implement a Human-in-the-Loop (HITL) pattern using LangGraph's interrupt feature
 - Add a checkpoint before tool execution using `interrupt_before=["tools"]`
 - Create a mechanism to approve, reject, or modify tool inputs
 - Resume execution after human approval
-- Track approval decisions in LangSmith traces
 
 This pattern is critical for production systems requiring human oversight!
 
