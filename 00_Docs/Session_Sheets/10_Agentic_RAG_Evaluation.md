@@ -68,7 +68,9 @@ Note that MDD doesn’t require the absolute value of our metrics to be deeply m
 
 We can use this approach to assess the impact of changing components throughout our RAG application, from document loading, text splitting, and advanced prompting and retrieval strategies, to swapping out vector stores, embedding models, or LLM chat models.  We can even use these metrics to assess the impact of fine-tuning, which we’ll do later in the course!   
 
-![A RAG application depicting how to use RAGAS metrics to drive product development.](https://prod-files-secure.s3.us-west-2.amazonaws.com/d7a211dd-f900-47ac-8e0e-f6b027cb71b3/f2e61e76-d784-4bbf-8853-53189184ee5b/image.png)
+<p align="center">
+  <img src="./images/ragas app.png" width="50%" />
+</p>
 
 A RAG application depicting how to use RAGAS metrics to drive product development.
 
@@ -104,7 +106,9 @@ Let’s look at the four primary metrics, all bounded between 0 and 1.
 
 In summary, there are four key metrics that we can leverage out of the box when doing a detailed assessment of our RAG applications using SDG and RAGAS.  Notice that Retrieval metrics (top) are focused on context, and Generation metrics (bottom) are focused on answers.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d7a211dd-f900-47ac-8e0e-f6b027cb71b3/c9d690f1-54d0-4fc3-9c25-1531036001cd/image.png)
+<p align="center">
+  <img src="./images/ragas.png" width="50%" />
+</p>
 
 RAGAS was built because the industry needed an answer to the question “How do I know if my application is good?”  While it might not be THE answer, it is AN answer.  With this in mind, which metrics will you use for your applications, and why? 
 
