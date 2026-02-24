@@ -1,0 +1,7 @@
+,context_precision,context_recall,context_entity_recall
+naive_retriever,0.8699,0.9875,0.3227
+bm25_retriever,0.4153,0.5125,0.1313
+contextual_compression_retrieval,0.9667,0.975,0.3718
+multi_query_retrieval,0.7869,1.0,0.3231
+parent_document_retrieval,0.875,0.95,0.2748
+ensemble_retrieval,0.5497,0.9875,0.2713

@@ -1,0 +1,1 @@
+Retriever,time,tokens,Cost $naive_retriever,124.19s,"309,910",0.1566bm25,67.22,150900,0.0738contextual compression,57.02s,125600,0.058multiquery,222.55s,390300,0.1904parent document,56.98s,160100,0.0833emsemble,223.02s,552800,0.2684
