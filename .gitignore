@@ -1,4 +1,6 @@
 .DS_Store
+.secrets/
+key.json
 .env
 content/
 .claude/
