@@ -36,34 +36,44 @@ class IAMAuthenticatedMCPClient:
         self._id_token = None
     
     def _get_identity_token(self) -> str:
-        """Get or refresh identity token for the service using service account key file."""
+        """Get or refresh identity token for the service using service account credentials.
+
+        Supports two credential sources (checked in order):
+        1. GOOGLE_APPLICATION_CREDENTIALS_JSON — raw JSON string of the service account key.
+           Set this in cloud environments (e.g. LangGraph Cloud) where file paths are unavailable.
+        2. GOOGLE_APPLICATION_CREDENTIALS — path to a service account key file (local dev default).
+        """
         if self._id_token:
             return self._id_token
-        
-        # Verify GOOGLE_APPLICATION_CREDENTIALS is set
+
+        creds_json_str = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
         creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-        if not creds_path:
+
+        if not creds_json_str and not creds_path:
             raise Exception(
-                "GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.\n\n"
-                "Please set it to the path of your service account key file:\n"
-                "  $ export GOOGLE_APPLICATION_CREDENTIALS=\"/path/to/service-account-key.json\"\n\n"
-                "To create a service account key file:\n"
-                "  $ gcloud iam service-accounts keys create key.json \\\n"
-                "      --iam-account=SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com"
+                "No GCP credentials found. Set either:\n"
+                "  GOOGLE_APPLICATION_CREDENTIALS_JSON — service account key JSON string (cloud deployments)\n"
+                "  GOOGLE_APPLICATION_CREDENTIALS      — path to a service account key file (local dev)"
             )
-        
-        if not os.path.isfile(creds_path):
-            raise Exception(
-                f"Service account key file not found: {creds_path}\n"
-                "Please verify the GOOGLE_APPLICATION_CREDENTIALS path is correct."
-            )
-        
+
         try:
-            # Load credentials from the service account key file
-            credentials = service_account.Credentials.from_service_account_file(
-                creds_path,
-                scopes=['https://www.googleapis.com/auth/cloud-platform']
-            )
+            # Load credentials — prefer JSON string (cloud), fall back to file path (local)
+            if creds_json_str:
+                service_account_info = json.loads(creds_json_str)
+                credentials = service_account.Credentials.from_service_account_info(
+                    service_account_info,
+                    scopes=['https://www.googleapis.com/auth/cloud-platform']
+                )
+            else:
+                if not os.path.isfile(creds_path):
+                    raise Exception(
+                        f"Service account key file not found: {creds_path}\n"
+                        "Please verify the GOOGLE_APPLICATION_CREDENTIALS path is correct."
+                    )
+                credentials = service_account.Credentials.from_service_account_file(
+                    creds_path,
+                    scopes=['https://www.googleapis.com/auth/cloud-platform']
+                )
             
             # Create a request object for token fetching
             request = Request()
