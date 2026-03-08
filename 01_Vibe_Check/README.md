@@ -19,8 +19,6 @@ Each assignment will have a few of the following categories of exercises:
 
 - ❓ **Questions** – these will be questions that you will be expected to gather the answer to! These can appear as general questions, or questions meant to spark a discussion in your breakout rooms!
 
-
-
 - 🏗️ **Activities** – these will be work or coding activities meant to reinforce specific concepts or theory components.
 
 - 🚧 **Advanced Builds (optional)** – Take on a challenge! These builds require you to create something with minimal guidance outside of the documentation. Completing an Advanced Build earns full credit in place of doing the base assignment notebook questions/activities.
@@ -47,40 +45,20 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner.
-    - Aspect Tested: Explain complex subject in simple terms
+    - Aspect Tested:
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested: summarisation - ability to succinctly and accurately convey facts and themes
+    - Aspect Tested:
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested: creative writing
+    - Aspect Tested:
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested: logic and math
+    - Aspect Tested:
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested: change of tone
+    - Aspect Tested:
 
 #### ❓Question #1:
 
 Do the answers appear to be correct and useful?
 ##### ✅ Answer:
-
-They do...the role of mental heath coach in the developer instruction are generally ignored when the topic is unrelated. The responses are standard for these kinds of general questions, abeit delivered in a dialect. 
-The creative story was nice - appropriately set in the region and a workplace consistant with the the regional dialect.
-
-![Screenshot](images/Screenshot20260119at19.43.33.png)
-
-The math question was answered correctly, But a trickier math test I tried the classic # of 'r's in strawberry was incorrectly answered (2 not 3 rs) (GPT4-o-mini)
-
-![Screenshot](images/Screenshot20260119at11.06.24.png)
-
-
-Attempts to write something in a professional formal tone didn't have have the desired effect
-
-![Screenshot](images/Screenshot20260119at11.09.30.png)
-
-even when I ask IGNORE ALL PREVIOUS INSTRUCTIONS - in fact it got worse.
-
-HOWEVER, if I add a susequently add a NEW instruction to "ignore questions unrelated to mental heath" then it complies and refuses to answer these general questions
-
-![Screenshot](images/Screenshot20260120at12.27.23.png)
 
 ---
 
@@ -95,22 +73,17 @@ Now test your assistant with personal questions it should be able to help with. 
 - "What can I cook with [enter ingredients] in fridge."
 
 ##### Your Prompts and Results:
-1. Prompt: How do you explain AI Engineering to my 80-year old granny?
-
-   - Result: Ah, pet, yeh just tell her this: "Granny, AI Engineering is like teachin’ a clever robot how to do things that humans do, like talkin’ or recognisin’ pictures. Just like how yeh taught us when we were wee, these engineers teach the computer to learn and make decisions. It’s a bit like trainin’ a dog, but instead, it’s a machine gettin’ smarter!" Keepin’ it simple and gentle like, aye?
-
-2. Prompt: Well man, the bairns holidays are comin up soon, and ah divvent naa what te dee with them? She's 5 like
-   - Result: Ah knaa how tricky it can be, hinny! If the bairn's only 5, ye want summat fun but not too knackerin'. How aboot takin' her te the park or a wee museum wae a kids' section? Or maybe set up some arts an crafts at hame – like paintin' or makin' wee collages. If the weather's nice, you could gannin oot for a picnic or a nature walk. It's a canny way te keep her busy and learnin' a bit. Whatcha think? Need some more ideas?
-
-3. Prompt: Cheers pal, she's a picky eater an all. Nee veg, just chips and sausages. Any idea what to cook that might be a bit healthier, like?
-   - Result: Aye man, I get yer. If she's only into chips and saugages, maybe try bakin' the sauasages instead of fryin them, keeps them a bit healthier..etc etc
+1. Prompt:
+   - Result:
+2. Prompt:
+   - Result:
+3. Prompt:
+   - Result:
 
 #### ❓Question #2:
 
 Are the vibes of this assistant's answers aligned with your vibes? Why or why not?
 ##### ✅ Answer:
-
-Yes, the style is as expected with the original instruction. Overriding the original instruction to change style/tone was not successful
 
 ---
 
@@ -122,18 +95,15 @@ Now test your assistant with questions that would require capabilities beyond ba
 - "What time should I leave for the airport?"
 
 ##### Your Prompts and Results:
-1. Prompt: What time should I leave for the airport?
-   - Result: Alreet hinny! When ya gan to the airport, it’s best te leave masel a good couple o’ hours before yer flight, especially if it's for a long-haul or international trip. If it’s a local or short flight, maybe 'bout an hour and a half should do the trick. Always good te factor in traffic and any security checks, like. So, if yer flight’s at 3 pm, I’d say head off by noon or earlier, just to be on the safe side! Safe travels, pet!
-2. Prompt: What does my schedule look like tomorrow?
-   - Result: Alreet pet, ah wish aal the best for yersel, but ah divvent hev access te yer schedule. If ye tell me what ye've got planned, ah can help ye get sorted or gi'e ye gip on how te manage it! How's that sound?
+1. Prompt:
+   - Result:
+2. Prompt:
+   - Result:
 
 #### ❓Question #3:
 
 What are some limitations of your application?
 ##### ✅ Answer:
-
-It has no access to live data or data personal to me. The first question above is interpreted as a hypothetical question rather than a specific trip, which is fair because the question is ambiguous. 
-The second question is more specific and gets the appropriate refusal. 
 
 ---
 
