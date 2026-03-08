@@ -100,7 +100,7 @@ Use RAGAS to evaluate your open-source Fireworks AI powered RAG app against an O
 
 Additionally, instrument both pipelines with **LangSmith** to capture token usage and cost per query. Use LangSmith's tracing and cost dashboards to compare the total cost of running each provider at scale. Include your evaluation results, cost breakdown, and analysis in your Loom video.
 
-SEE endpoint_slammer_ipynb for code. 
+SEE endpoint_slammer_ipynb notebook for code. 
 
 ## Advanced Activity: Local Models
 
