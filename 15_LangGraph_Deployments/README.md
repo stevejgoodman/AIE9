@@ -69,21 +69,31 @@ Have fun!
 What is the key architectural difference between the `simple_agent` and `agent_with_helpfulness` graphs? Specifically, explain how the helpfulness evaluation loop works and what mechanisms are in place to prevent it from running indefinitely.
 
 ##### Answer:
+Simple_Agent has a conditional edge that either loops back if a tool call is detected (so response of tool call can be proceessed) or it goes to end and the graph stops execution. The tools are Arxiv search, Websearch and dense-vector retrieval.
 
+Agent_with_helpfullness has an extra node that evaluates the response of the main tool loop. It effectivly make a classification decision Y or N, via structured output to constrain the reponse to only one of these 2 outcomes that terminates the graph if the answer is considered sufficiently helpful, or goes back around the loop again until the response is considered helpful. Since this could cause an infinite loop, there is a
+stopping condition that checks if there are more than 10 messages in the messages list in State, and if so, terminates the graph regardless. 
 
 
 #### Question 2:
 What is the role of `langgraph.json` in the LangGraph Deployments? Describe each of its key fields and how the platform uses this file to discover and serve your graphs.
 
 ##### Answer:
-
+Its a config file that is run when a langraph project is deployed that specifies which graphs are to be served, a .env file if there is one, python packages and versions. It has some other things that can be specified for Langsmith deployment like vector search using the SaaS built-in Postgres store, and settting the lifespan of threads for checkpointing.
+The key fields would be :
+dependencies:
+graphs:
+env:
 
 
 #### Activity #1:
 Create your own agent graph! Build a new graph in `app/graphs/` with a custom evaluation node (e.g., a vibe checker, a fact verifier, a summarizer — get creative!). Register it in `langgraph.json`, serve it with `uv run langgraph dev`
 
 ##### Answer:
-
+THE HOMEWORK CODE IS NOT IN THIS REPO
+Instead, I've split the code into 2 dedicatd repos so that it can be deployed to cloud successfully. (langsmith doesn't like the AIM monorepo)
+- https://github.com/stevejgoodman/cats-langgraph-agent (gets deployed to Langsmith Cloud Deployment)
+ - https://github.com/stevejgoodman/cats-mcp (gets delployed to GCP)
 
 
 # Ship 🚢
