@@ -40,7 +40,7 @@ class _RAGState(TypedDict):
     response: str
 
 
-def _build_rag_graph(data_dir: str):
+def _build_rag_graph(data_dir: str, model_name: str | None = None):
     """Construct and compile a minimal RAG graph.
 
     Steps:
@@ -90,11 +90,17 @@ def _build_rag_graph(data_dir: str):
         "Only use the provided context to answer the query. If you do not know the answer, or it's not contained in the provided context respond with \"I don't know\""
     )
     chat_prompt = ChatPromptTemplate.from_messages([("human", human_template)])
-    generator_llm = ChatOpenAI(
-        model=os.environ.get("FIREWORKS_CHAT_MODEL", "accounts/fireworks/models/gpt-oss-20b"),
-        openai_api_key=os.environ["FIREWORKS_API_KEY"],
-        openai_api_base="https://api.fireworks.ai/inference/v1",
-    )
+    if model_name == "gpt-4.1-mini":
+        generator_llm = ChatOpenAI(
+            model=model_name,
+            openai_api_key=os.environ["OPENAI_API_KEY"],
+        )
+    else:
+        generator_llm = ChatOpenAI(
+            model=model_name or os.environ.get("FIREWORKS_CHAT_MODEL") or "accounts/fireworks/models/gpt-oss-20b",
+            openai_api_key=os.environ["FIREWORKS_API_KEY"],
+            openai_api_base="https://api.fireworks.ai/inference/v1",
+        )
 
     def retrieve(state: _RAGState) -> _RAGState:
         retrieved_docs = retriever.invoke(state["question"]) if retriever else []
@@ -118,6 +124,16 @@ def _get_rag_graph():
     """Return a cached compiled RAG graph built from RAG_DATA_DIR."""
     data_dir = os.environ.get("RAG_DATA_DIR", "data")
     return _build_rag_graph(data_dir)
+
+
+def build_graph(model_name: str | None = None):
+    """Build and return a compiled RAG graph.
+
+    Args:
+        model_name: Optional model identifier. Defaults to FIREWORKS_CHAT_MODEL env var.
+    """
+    data_dir = os.environ.get("RAG_DATA_DIR", "data")
+    return _build_rag_graph(data_dir, model_name=model_name)
 
 
 @tool

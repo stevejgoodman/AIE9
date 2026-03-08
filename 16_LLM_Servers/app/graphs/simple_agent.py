@@ -10,7 +10,6 @@ from __future__ import annotations
 
 from langgraph.graph import END, START, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
-
 from app.models import get_chat_model, fix_tool_calls
 from app.state import MessagesState
 from app.tools import get_tool_belt
@@ -43,4 +42,5 @@ def build_graph():
 
 
 # Export compiled graph for LangGraph
+
 graph = build_graph().compile()

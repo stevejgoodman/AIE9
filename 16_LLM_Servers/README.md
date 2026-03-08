@@ -83,7 +83,8 @@ What is the difference between serverless and dedicated endpoints?
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+Dedicated endpoints give you single use of a server which provides custom hardware choices stability and service guarantees (to an extent) around latency and throughput, assuming you size the resources appropriately. The downside is you pay for every minute the service is up, irrespective of whether it is being used or not. 
+Serverless is effectively shared resources that get allocated on demand, generally quicker to get access to from a cold start than it takes to allocate a dedicated instance. Therefore you pay for what you use, which may be cheaper or more expensive than a dedicated endpoint depending on how much traffic needs to be served and how volatile traffic is. It tour burning lots of tokens pretty consistenty all the time, then it may not be the best choice.  Latency & throughput will vary more depending on how much load is currently on the server from other tenants
 
 ### ❓ Question #2:
 
@@ -91,13 +92,15 @@ Why is it important to consider token throughput and latency when choosing an LL
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+Throughput indicates how many queries can be handled satisfactorily in a multi-user environment where queries are coming in concurrently. Latency (typically measured as time to first token) is more about the individual user experience, particularly streaming responses  where 1 token is displayed at a time, gives the impression of responsiveness rather than to total time required to display the completed output, and there are other factors like caching and prompt catching, type of chip,  that will help improve one or the other. 
 
 ## Activity 1: RAGAS Evaluation with Cost Analysis
 
 Use RAGAS to evaluate your open-source Fireworks AI powered RAG app against an OpenAI `gpt-4.1-mini` powered equivalent. Compare retrieval quality, answer faithfulness, and end-to-end accuracy across both providers.
 
 Additionally, instrument both pipelines with **LangSmith** to capture token usage and cost per query. Use LangSmith's tracing and cost dashboards to compare the total cost of running each provider at scale. Include your evaluation results, cost breakdown, and analysis in your Loom video.
+
+SEE endpoint_slammer_ipynb for code. 
 
 ## Advanced Activity: Local Models
 
